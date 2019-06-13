@@ -1,10 +1,10 @@
 ### Thermostat Project 
 
-Week: 8 - Intro to JavaScript
+Week: 7 - Intro to JavaScript
 
 Purpose: Pairing challenge
 
-Dates: 12/06/19 - 13/06/19
+Dates: 11/06/19 - 13/06/19
 
 Link to challenge instructions: https://github.com/makersacademy/course/blob/master/thermostat/thermostat_logic.md
 
