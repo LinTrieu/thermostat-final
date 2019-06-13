@@ -10,14 +10,18 @@ function Thermostat() {
 };
 
 Thermostat.prototype.up = function() {
-  return this.temp += 1;
+  if(this.temp < this.maxTemp) {
+    this.temp += 1;
+  } else {
+    this.temp = this.maxTemp;
+  }
 };
 
 Thermostat.prototype.down = function() {
-  if(this.isMinTemp()) {
-    throw new Error('you will freeze if you do that!');
-  }
-  return this.temp -= 1;
+  if(this.temp > this.MIN_TEMP) {
+    this.temp -= 1;
+  } else
+    this.temp = this.MIN_TEMP; 
 };
 
 Thermostat.prototype.giveMinTemp = function() {
