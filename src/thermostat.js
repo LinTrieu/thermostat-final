@@ -11,17 +11,17 @@ function Thermostat() {
 
 Thermostat.prototype.up = function() {
   if(this.temp < this.maxTemp) {
-    this.temp += 1;
+    return this.temp += 1;
   } else {
-    this.temp = this.maxTemp;
+    return this.temp = this.maxTemp;
   }
 };
 
 Thermostat.prototype.down = function() {
   if(this.temp > this.MIN_TEMP) {
-    this.temp -= 1;
+    return this.temp -= 1;
   } else
-    this.temp = this.MIN_TEMP; 
+    return this.temp = this.MIN_TEMP; 
 };
 
 Thermostat.prototype.giveMinTemp = function() {
@@ -43,13 +43,13 @@ Thermostat.prototype.powerSavingModeSwitch = function() {
   }};
 
 Thermostat.prototype.reset = function() {
-  this.temp = this.DEFAULT_TEMP;
+  return this.temp = this.DEFAULT_TEMP;
 };
 
 Thermostat.prototype.energyUsage = function() {
   if(this.temp < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return 'low-usage';
-  } else if(this.temp >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temp <= this.MAX_LIMIT_PSM_ON ) {
+  } else if(this.temp >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temp < this.MAX_LIMIT_PSM_ON ) {
     return 'medium-usage';
   } else {
     return 'high-usage';

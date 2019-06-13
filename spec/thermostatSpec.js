@@ -23,10 +23,10 @@ describe('Thermostat', function() {
   });
 
   it('cannot be lower than the minimum temp', function(){
-    [1,2,3,4,5,6,7,8,9,10].forEach(function(i){
+    for(var i = 0; i < 20; i++) {
       thermostat.down();
-    });
-    expect(function(){thermostat.down()}).toThrow(new Error("you will freeze if you do that!")); 
+    }
+    expect(thermostat.down()).toBe(10); 
   });
 
   it('by default power saving mode is on', function(){
@@ -79,7 +79,7 @@ describe('Thermostat', function() {
   });
 
   it('can show high-usage status', function(){
-    for(var i = 0; i < 6; i++){
+    for(var i = 0; i < 10; i++){
       thermostat.up();
     }
     expect(thermostat.energyUsage()).toEqual('high-usage')
