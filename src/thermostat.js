@@ -49,11 +49,9 @@ Thermostat.prototype.reset = function() {
 Thermostat.prototype.energyUsage = function() {
   if(this.temp < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return 'low-usage';
-  }
-  else if(this.temp >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temp <= this.MAX_LIMIT_PSM_ON ) {
+  } else if(this.temp >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temp <= this.MAX_LIMIT_PSM_ON ) {
     return 'medium-usage';
-  }
-  else {
+  } else {
     return 'high-usage';
   };
 };
@@ -65,5 +63,3 @@ Thermostat.prototype.showPowerSaving = function() {
     return "off";
   };
 };
-
-
